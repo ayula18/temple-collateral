@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply m-0 p-0 font-sans antialiased text-text-body bg-bg-dark;
+  }
+}
+
+@layer components {
+  /* Text gradient utility for high-end feel */
+  .text-gradient-gold {
+    @apply text-transparent bg-clip-text bg-gradient-gold-text;
+  }
+
+  /* Universal section styling for dark luxury theme */
+  .section-base {
+    @apply border-b border-white/5;
+  }
+}
+
+@layer utilities {
+  .animate-float-bg {
+    animation: floatBg 6s ease-in-out infinite;
+  }
+  .animate-float-device {
+    animation: floatDevice 6s ease-in-out infinite;
+  }
+}
+
+@keyframes floatBg {
+  0%, 100% { transform: translateY(-15px) rotate(-2deg) scale(1.1); }
+  50% { transform: translateY(15px) rotate(2deg) scale(1.1); }
+}
+
+@keyframes floatDevice {
+  0%, 100% { transform: translateY(-15px) rotate(-2deg); }
+  50% { transform: translateY(15px) rotate(2deg); }
+}
